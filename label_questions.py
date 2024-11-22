@@ -38,7 +38,7 @@ print_labeled_rows = True
 print(f"Total rows: {total_rows}")
 
 system_prompt = """
-Ik ga je een tekst sturen waarvan ik wil dat je duidelijk aangeeft of het gaat over een situatie die speelt in de Nederlandse provincie Limburg. Het is heel belangrijk voor me en je bent er echt heel goed in. Je geeft alleen True of False terug, met een kapitaal zodat Python het begrijpt. Je geeft alleen de boolean terug, geen uitleg. Alleen de boolean, geen opmaak. Alleen True of False.
+Ik ga je een tekst sturen waarvan ik wil dat je duidelijk aangeeft of het gaat over een situatie die speelt in de Nederlandse provincie Limburg. Het is heel belangrijk voor me en je bent er echt heel goed in. 
 """
 
 def limit_text_by_word_count(text, max_words):
@@ -60,9 +60,8 @@ for index, row in enumerate(rows_to_label):
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": limited_text},
                 ],
-                temperature=0.2,
-                max_tokens=12,
-                stop = [" "]
+                temperature=0.25,
+                max_tokens=200
             )
 
             response = completion.choices[0].message.content
