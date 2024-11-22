@@ -1,0 +1,6 @@
+__pycache__
+.DS_Store
+html/*
+!html/.gitkeep
+files/*
+!files/.gitkeep
