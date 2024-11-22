@@ -4,3 +4,4 @@ html/*
 !html/.gitkeep
 files/*
 !files/.gitkeep
+secrets.json
